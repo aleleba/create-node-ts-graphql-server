@@ -1,0 +1,13 @@
+module.exports = `
+
+  """Test Query"""
+  type Test {
+    test: String
+  }
+
+  """Esta es la Data de LogIn, Si los datos no son correctos devuelve el usuario Null y la conexion en False"""
+  type TestMutation {
+    testMutation(text: String): String
+  }
+  
+`
