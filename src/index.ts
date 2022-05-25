@@ -8,7 +8,7 @@ import { useServer } from 'graphql-ws/lib/use/ws';
 import { execute, subscribe } from 'graphql';
 import GraphQLserver from './GraphQL/server';// Server of GraphQL,
 import schema from './GraphQL/schema';
-import { config } from './config';
+import { config } from '../config';
 import apiRouter from './routes';
 
 

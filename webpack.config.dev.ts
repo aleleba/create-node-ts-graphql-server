@@ -13,7 +13,7 @@ const resolvePath = (...args) => path.resolve(ROOT_DIR, ...args);
 const BUILD_DIR = resolvePath('build');
 
 const config = {
-	entry: './index.ts',
+	entry: './src/index.ts',
 	target: 'node',
 	watch: true,
 	externals: [nodeExternals()],
