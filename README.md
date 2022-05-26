@@ -22,7 +22,7 @@ This is an example of config.
 #ENVIRONMENT Defauld production
 ENVIRONMENT=development
 #WHITELIST URLS Default to http://localhost
-WHITELIST_URLS=https://dev-back-end.p-lao.com
+WHITELIST_URLS=https://someurl.com
 #GRAPHIQL Default to "false"
 GRAPHIQL=true
 # PORT EXPOSE APP Default to 4000
