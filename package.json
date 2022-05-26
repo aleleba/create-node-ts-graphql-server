@@ -1,6 +1,6 @@
 {
-  "name": "@aleleba/create-ts-graphql-server",
-  "version": "1.0.2",
+  "name": "@aleleba/create-node-ts-graphql-server",
+  "version": "1.0.3",
   "description": "Node with Typescript and GraphQL Server",
   "bin": "./bin/cli.js",
   "main": "index.js",
