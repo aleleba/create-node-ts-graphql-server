@@ -1,11 +1,12 @@
 # Create Node TS GraphQL Server
 
-This project aims to have a starter kit for creating a new Node with typescript, GraphQl server and tools that generally go along with it.
+This project aims to have a starter kit for creating a new Node with typescript, GraphQL server and tools that generally go along with it.
 
 Tech(Library or Framework) | Version |
 --- | --- |
 Jest (Testing) | 28.1.0
 Typescript | 4.7.2
+GraphQL | 16.5.0
 
 ## Setup
 To create a new project run in the terminal:
