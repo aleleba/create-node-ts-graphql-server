@@ -13,10 +13,10 @@ const resolvers = {
 		testMutation: (rootValue, args, context) => ({}),
 	},
 	Test: {
-		test: (rootValue, args, context) => getTest(rootValue, args, context)
+		test: (rootValue, args, context) => getTest({rootValue, args, context})
 	},
 	TestMutation: {
-		testMutation: (rootValue, args, context) => addText(rootValue, args, context)
+		testMutation: (rootValue, args, context) => addText({rootValue, args, context})
 	}
 };
 
