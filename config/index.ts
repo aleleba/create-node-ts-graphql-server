@@ -5,6 +5,7 @@ dotenv.config();
 export const config = {
 	env: process.env.ENVIRONMENT ? process.env.ENVIRONMENT : 'production',
 	graphiQL: process.env.GRAPHIQL === 'true' ? true : false,
+	playgroundGraphQL: process.env.PLAYGROUND_GRAPHQL === 'true' ? true : false,
 	whiteList: process.env.WHITELIST_URLS ? process.env.WHITELIST_URLS.split(',') : [
 		'http://localhost'
 	],

@@ -1,6 +1,6 @@
 {
   "name": "@aleleba/create-node-ts-graphql-server",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Node with Typescript and GraphQL Server",
   "bin": "./bin/cli.js",
   "main": "index.js",
@@ -40,6 +40,7 @@
     "express": "^4.18.1",
     "express-graphql": "^0.12.0",
     "graphql": "^16.5.0",
+    "graphql-playground-middleware-express": "^1.7.23",
     "graphql-subscriptions": "^2.0.0",
     "graphql-tools": "^8.2.11",
     "graphql-ws": "^5.8.2",
