@@ -13,7 +13,7 @@ const runCommand = command => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/aleleba/create-node-ts-graphql-server ${repoName}`;
-const installDepsCommand = `cd ${repoName} && rm -rf .git && git init && git add . && git commit -m "Initial commit" && npm install`;
+const installDepsCommand = `cd ${repoName} && rm -rf .git && git init && git add . && git commit -m "Initial commit" && npm install --legacy-peer-deps`;
 
 console.log(`Cloning the repository with name ${repoName}`);
 const checkedOut = runCommand(gitCheckoutCommand);
