@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const { execSync } = require('child_process');
+const isWin = process.platform === "win32";
 
 const runCommand = command => {
     try{
