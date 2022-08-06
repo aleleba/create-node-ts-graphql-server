@@ -14,6 +14,15 @@ const runCommand = command => {
     return true;
 }
 
+const runCommandWithOutput = command => {
+    try{
+        return execSync(`${command}`);
+    } catch (e) {
+        console.error(`Failed to execute ${command}`, e);
+        return false;
+    }
+}
+
 const replaceTextOnFile = ({
     file,
     textToBeReplaced,
