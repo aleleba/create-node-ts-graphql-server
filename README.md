@@ -6,7 +6,7 @@ Tech(Library or Framework) | Version |
 --- | --- |
 Jest (Testing) | 28.1.3
 Typescript | 4.7.4
-GraphQL | 16.5.0
+GraphQL | 16.6.0
 
 ## Setup
 To create a new project run in the terminal:
