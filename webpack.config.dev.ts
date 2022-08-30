@@ -1,12 +1,10 @@
 import path  from 'path';
-import * as dotenv from 'dotenv';
 import webpack from 'webpack';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 import WebpackShellPluginNext from 'webpack-shell-plugin-next';
-
-const dotEnvToParse = dotenv.config();
+import { deFaultValues } from './config';
 
 const ROOT_DIR = path.resolve(__dirname);
 const resolvePath = (...args) => path.resolve(ROOT_DIR, ...args);
@@ -50,12 +48,12 @@ const config = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new ESLintPlugin(),
-		new webpack.DefinePlugin({
-			'process.env': JSON.stringify(dotEnvToParse.parsed),
+		new webpack.EnvironmentPlugin({
+			...deFaultValues
 		}),
 		new WebpackShellPluginNext({
 			onBuildEnd: {
-				scripts: ['npm run start:nodemon'],
+				scripts: ['nodemon build/index.js'],
 				blocking: false,
 				parallel: true
 			}

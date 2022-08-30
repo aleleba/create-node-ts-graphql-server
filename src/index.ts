@@ -13,7 +13,7 @@ import { config } from '../config';
 import apiRouter from './routes';
 
 const app = express(), //creating app
-	whitelist = config.whiteList,
+	whitelist = config.WHITELIST_URLS,
 	corsOptions = {
 		origin: function (origin, callback) {
 			if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -34,14 +34,14 @@ app
 	.use(apiRouter)//Routes de App
 	.use('/graphql', GraphQLserver);//Server of Graphql
 
-	if(config.playgroundGraphQL === true){
+	if(config.PLAYGROUND_GRAPHQL === true){
 		app.get('/playground', expressPlayground({ endpoint: '/graphql' }));
 	}
 
 // DO NOT DO app.listen() unless we're testing this directly
 if (require.main === module) {
 
-	const server = app.listen(config.port, () => {
+	const server = app.listen(config.PORT, () => {
 		// create and use the websocket server
 		const wsServer = new ws.Server({
 			server,
@@ -74,7 +74,7 @@ if (require.main === module) {
 			},
 		}, wsServer);
 
-		console.log(`Starting Express on port ${config.port} and iniciating server of web sockets`);
+		console.log(`Starting Express on port ${config.PORT} and iniciating server of web sockets`);
 
 	});
 

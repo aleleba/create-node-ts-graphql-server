@@ -11,7 +11,7 @@ server.use(
 	graphqlHTTP( (req, res) => {
 		return {
 			schema,
-			graphiql: config.graphiQL,
+			graphiql: config.GRAPHIQL,
 			context: { req, res }
 		};
 	}),
