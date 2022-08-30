@@ -1,12 +1,10 @@
 import path  from 'path';
-import * as dotenv from 'dotenv';
 import webpack from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
-
-const dotEnvToParse = dotenv.config();
+import { deFaultValues } from './config';
 
 const ROOT_DIR = path.resolve(__dirname);
 const resolvePath = (...args) => path.resolve(ROOT_DIR, ...args);
@@ -49,8 +47,8 @@ const config = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new ESLintPlugin(),
-		new webpack.DefinePlugin({
-			'process.env': JSON.stringify(dotEnvToParse.parsed),
+		new webpack.EnvironmentPlugin({
+			...deFaultValues
 		}),
 	],
 	optimization: {
