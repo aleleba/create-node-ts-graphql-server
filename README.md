@@ -4,8 +4,8 @@ This project aims to have a starter kit for creating a new Node with typescript,
 
 Tech(Library or Framework) | Version |
 --- | --- |
-Jest (Testing) | 29.0.3
-Typescript | 4.8.3
+Jest (Testing) | 29.1.1
+Typescript | 4.8.4
 GraphQL | 16.6.0
 
 ## Setup
