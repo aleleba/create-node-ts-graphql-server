@@ -5,7 +5,7 @@ This project aims to have a starter kit for creating a new Node with typescript,
 Tech(Library or Framework) | Version |
 --- | --- |
 Jest (Testing) | 29.3.1
-Typescript | 4.9.3
+Typescript | 4.9.4
 GraphQL | 16.6.0
 
 ## Setup
