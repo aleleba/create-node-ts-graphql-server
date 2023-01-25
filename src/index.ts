@@ -35,7 +35,13 @@ app
 	.use('/graphql', GraphQLserver);//Server of Graphql
 
 	if(config.PLAYGROUND_GRAPHQL === true){
-		app.get('/playground', expressPlayground({ endpoint: '/graphql' }));
+		app.get('/playground', expressPlayground({ 
+			endpoint: '/graphql',
+			subscriptionEndpoint: '/graphql',
+			settings: {
+				'request.credentials': 'include', //Include Credentials for playground
+		  	}, 
+		}));
 	}
 
 // DO NOT DO app.listen() unless we're testing this directly
