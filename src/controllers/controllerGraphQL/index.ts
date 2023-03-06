@@ -1,6 +1,6 @@
 'use strict';
 
-import { getTestModel, addTextModel } from '../../models';
+import { getTestModel, addTextModel } from '@models';
 
 // eslint-disable-next-line
 export const getTest = async ({rootValue, args, context}) => {

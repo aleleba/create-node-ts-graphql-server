@@ -6,11 +6,11 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { useServer } from 'graphql-ws/lib/use/ws';
 import { execute, subscribe } from 'graphql';
-import GraphQLserver from './GraphQL/server';// Server of GraphQL,
+import GraphQLserver from '@GraphQL/server';// Server of GraphQL,
 import expressPlayground from 'graphql-playground-middleware-express';
-import schema from './GraphQL/schema';
-import { config } from '../config';
-import apiRouter from './routes';
+import schema from '@GraphQL/schema';
+import { config } from '@config';
+import apiRouter from '@routes';
 
 const app = express(), //creating app
 	whitelist = config.WHITELIST_URLS,

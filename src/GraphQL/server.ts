@@ -1,8 +1,8 @@
 'use strict';
 import express from 'express'; //express
 import { graphqlHTTP } from 'express-graphql';
-import { config } from '../../config';
-import schema from './schema';
+import { config } from '@config';
+import schema from '@GraphQL/schema';
 
 const server = express.Router();//Router de Express
 

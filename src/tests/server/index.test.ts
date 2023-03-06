@@ -1,4 +1,4 @@
-import server from '../../index';
+import server from '@src';
 import supertest from 'supertest';
 describe('global server tests', () => {
     let request;

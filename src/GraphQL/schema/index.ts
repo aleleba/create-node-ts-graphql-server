@@ -1,5 +1,5 @@
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import resolvers from'../resolvers';
+import resolvers from'@GraphQL/resolvers';
 import Test from './Test.gql';
 
 // The GraphQL schema

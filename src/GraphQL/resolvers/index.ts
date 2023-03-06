@@ -1,6 +1,6 @@
 'use strict';
 
-import { getTest, addText } from '../../controllers/controllerGraphQL';
+import { getTest, addText } from '@controllerGraphQL';
 
 // A map of functions which return data for the schema.
 const resolvers = {
