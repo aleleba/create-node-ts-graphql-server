@@ -21,8 +21,9 @@ server.use(
 
 // DO NOT DO app.listen() unless we're testing this directly
 if (require.main === module) {
-	server.listen((process.env.PORT || 4000), () => {
-		console.log(`Iniciando Express en el puerto 4000${server.graphqlPath}`); /*${app.get('port')}*/
+	const app = express();
+	app.listen((process.env.PORT || 4000), () => {
+		console.log(`Iniciando Express en el puerto 4000`); /*${app.get('port')}*/
 	});
 }
 

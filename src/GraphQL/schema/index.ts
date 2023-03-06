@@ -1,6 +1,6 @@
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import resolvers from'@GraphQL/resolvers';
-import Test from './Test.gql';
+import Test from '@GraphQL/schema/Test.gql';
 
 // The GraphQL schema
 const rootTypes = `

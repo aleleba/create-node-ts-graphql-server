@@ -6,6 +6,8 @@
       "moduleResolution": "node",
       "sourceMap": true,
       "typeRoots" : ["./src/@types", "./node_modules/@types"],
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
       "baseUrl": ".",
       "paths": {
         "@src/*": ["src/*"],

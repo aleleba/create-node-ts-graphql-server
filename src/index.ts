@@ -15,8 +15,8 @@ import apiRouter from '@routes';
 const app = express(), //creating app
 	whitelist = config.WHITELIST_URLS,
 	corsOptions = {
-		origin: function (origin, callback) {
-			if (whitelist.indexOf(origin) !== -1 || !origin) {
+		origin: function (origin: string | undefined, callback: (arg0: Error | null, arg1?: boolean) => void) {
+			if (whitelist.indexOf(origin as string) !== -1 || !origin) {
 				callback(null, true);
 			} else {
 				callback(new Error('Not allowed by CORS'));
@@ -29,7 +29,7 @@ const app = express(), //creating app
 app
 	.use(cookieParser())
 	.use(express.urlencoded({limit: '500mb', extended: true}))
-	.use(express.json({limit: '500mb', extended: true}))
+	.use(express.json({limit: '500mb'}))
 	.use(cors(corsOptions))
 	.use(apiRouter)//Routes de App
 	.use('/graphql', GraphQLserver);//Server of Graphql
