@@ -5,7 +5,7 @@ describe('global server tests', () => {
     beforeEach(() => {
         request = supertest(server);
       });
-    test('should return Test data from test Query', async () => {
+    it('should return Test data from test Query', async () => {
         const bodyResponse = {
             data: {
               test: { test: 'This is the text response for Test Query from a model' }
@@ -18,7 +18,7 @@ describe('global server tests', () => {
         expect(response.body).toEqual(bodyResponse);
     });
 
-    test('should return Test data from test Mutation', async () => {
+    it('should return Test data from test Mutation', async () => {
         const bodyResponse = {
             data: {
                 testMutation: {
