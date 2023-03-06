@@ -8,7 +8,7 @@ import { resolveTsAliases } from 'resolve-ts-aliases';
 import { deFaultValues } from './config';
 
 const ROOT_DIR = path.resolve(__dirname);
-const resolvePath = (...args) => path.resolve(ROOT_DIR, ...args);
+const resolvePath = (...args: string[]) => path.resolve(ROOT_DIR, ...args);
 const BUILD_DIR = resolvePath('build');
 const alias = resolveTsAliases(path.resolve('tsconfig.json'));
 
