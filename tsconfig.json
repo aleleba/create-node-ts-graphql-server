@@ -6,6 +6,25 @@
       "moduleResolution": "node",
       "sourceMap": true,
       "typeRoots" : ["./src/@types", "./node_modules/@types"],
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "baseUrl": ".",
+      "paths": {
+        "@src/*": ["src/*"],
+        "@src": ["src"],
+        "@routes*": ["src/routes/*"],
+        "@routes": ["src/routes"],
+        "@controllers/*": ["src/controllers/*"],
+        "@controllers": ["src/controllers"],
+        "@models/*": ["src/models/*"],
+        "@models": ["src/models"],
+        "@controllerGraphQL/*": ["src/controllers/controllerGraphQL/*"],
+        "@controllerGraphQL": ["src/controllers/controllerGraphQL"],
+        "@GraphQL/*": ["src/GraphQL/*"],
+        "@GraphQL": ["src/GraphQL"],
+        "@config/*": ["config/*"],
+        "@config": ["config"]
+      }
     },
     "lib": ["es2015"]
 }
