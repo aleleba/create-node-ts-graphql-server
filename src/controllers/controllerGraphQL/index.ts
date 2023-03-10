@@ -1,6 +1,7 @@
 'use strict';
 
 import { getTestModel, addTextModel } from '@models';
+import { TextMutation } from '@src/GraphQL/schema/test.schema';
 
 // eslint-disable-next-line
 export const getTest = async ({}) => {
@@ -8,11 +9,6 @@ export const getTest = async ({}) => {
 };
 
 // eslint-disable-next-line
-export const addText = async ({args}: {
-	rootValue: any
-	args: { text: string }
-	context: any
-}) => {
-	const text = args.text;
+export const addText = async ({ text }: TextMutation) => {
 	return addTextModel({ text });
 };

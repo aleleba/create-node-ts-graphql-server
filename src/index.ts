@@ -1,5 +1,6 @@
 'use strict';
 
+import "reflect-metadata";
 import ws from 'ws'; // yarn add ws
 import express from 'express'; //express
 import cors from 'cors';
