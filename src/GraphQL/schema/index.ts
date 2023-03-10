@@ -1,17 +1,10 @@
-import { makeExecutableSchema } from '@graphql-tools/schema';
-import resolvers from'@GraphQL/resolvers';
-import Test from '@GraphQL/schema/Test.gql';
+'use strict'
 
-// The GraphQL schema
-const rootTypes = `
-  type Query {
-    test: Test
-  }
-  type Mutation {
-      testMutation: TestMutation
-  }
-`;
+import { buildSchemaSync } from "type-graphql"
+import { TestResolver } from "@GraphQL/resolvers/test.resolver";
 
-const typeDefs = [ rootTypes, Test ];
-
-export default makeExecutableSchema({typeDefs, resolvers});
+const schema = buildSchemaSync({
+        resolvers: [TestResolver],
+        emitSchemaFile: true,
+    })
+export default schema

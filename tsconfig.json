@@ -2,12 +2,14 @@
     "compilerOptions": {
       "module": "commonjs",
       "esModuleInterop": true,
-      "target": "es6",
+      "target": "es2018",
       "moduleResolution": "node",
       "sourceMap": true,
       "typeRoots" : ["./src/@types", "./node_modules/@types"],
       "strict": true,
       "forceConsistentCasingInFileNames": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
       "baseUrl": ".",
       "paths": {
         "@src/*": ["src/*"],
@@ -26,5 +28,5 @@
         "@config": ["config"]
       }
     },
-    "lib": ["es2015"]
+    "lib": ["es2018", "esnext.asynciterable"]
 }

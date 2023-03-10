@@ -1,8 +1,10 @@
 'use strict';
+
 import express from 'express'; //express
 import { graphqlHTTP } from 'express-graphql';
 import { config } from '@config';
-import schema from '@GraphQL/schema';
+import schema from '@src/GraphQL/schema';
+
 
 const server = express.Router();//Router de Express
 
@@ -16,8 +18,6 @@ server.use(
 		};
 	}),
 );
-
-
 
 // DO NOT DO app.listen() unless we're testing this directly
 if (require.main === module) {
