@@ -12,17 +12,9 @@ type Query {
 }
 
 type Test {
-  text: Text!
+  text: String!
 }
 
 type TestMutation {
-  textMutation(text: String!): TextMutation!
-}
-
-type Text {
-  text: String!
-}
-
-type TextMutation {
-  text: String!
+  text(text: String!): String!
 }
