@@ -1,36 +1,21 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 'use strict';
 
-import { Field, ObjectType, Arg } from "type-graphql";
+import { Field, ObjectType, Arg } from 'type-graphql';
 import { getTest, addText } from '@controllerGraphQL';
 
 @ObjectType()
 export class Test {
-    @Field(() => Text)
-    async text(){
-        return {
-            text: await getTest({})
-        }
-    }
-}
-
-@ObjectType()
-export class Text {
-    @Field()
-    text?: string 
+    @Field(() => String)
+	async text(){
+		return await getTest({});
+	}
 }
 
 @ObjectType()
 export class TestMutation {
-    @Field(type => TextMutation)
-    async textMutation(@Arg('text') text?: string){
-        return {
-            text: await addText({text})
-        }
-    }
-}
-
-@ObjectType()
-export class TextMutation {
-    @Field()
-    text?: string
+    @Field(() => String)
+	async text(@Arg('text') text?: string){
+		return await addText({text});
+	}
 }
