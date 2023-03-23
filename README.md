@@ -5,7 +5,7 @@ This project aims to have a starter kit for creating a new Node with typescript,
 Tech(Library or Framework) | Version |
 --- | --- |
 Jest (Testing) | 29.5.0
-Typescript | 4.9.5
+Typescript | 5.0.2
 GraphQL | 16.6.0
 Type GraphQL | 2.0.0-beta.1
 
@@ -25,8 +25,6 @@ This is an example of config.
 ENVIRONMENT=development
 #WHITELIST URLS Default to http://localhost
 WHITELIST_URLS=https://someurl.com
-#GRAPHIQL Default to "false"
-GRAPHIQL=true
 #PLAYGROUND GRAPHQL Default to "false"
 PLAYGROUND_GRAPHQL=true
 # PORT EXPOSE APP Default to 4000

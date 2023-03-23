@@ -67,7 +67,7 @@ if(!checkedOut) process.exit(-1);
 
 const actualVersion = runCommandWithOutput(`cd ${repoName} && node -p "require('./package.json').version"`).toString().trim()
 
-const installDepsCommand = `cd ${repoName} && npm install --legacy-peer-deps`;
+const installDepsCommand = `cd ${repoName} && npm install`;
 const cleanGitHistoryCommand = `cd ${repoName} && rm -rf .git && git init && git add --all -- ":!.github" ":!bin" && git commit -m "Initial commit"`
 const cleanGitHistoryCommandWindows = `cd ${repoName} && rmdir .git /s /q && git init && git add --all -- ":!.github" ":!bin" && git commit -m "Initial commit"`
 const deleteFoldersCommand = `cd ${repoName} && rm -rf .github && rm -rf bin`
@@ -102,7 +102,7 @@ if(!cleanGitHistory) process.exit(-1);
 
 console.log("Congratulations! You are ready. Follow the following commands to start");
 console.log(`cd ${repoName}`);
-console.log('Create a .env file with ENV=development(defauld: production), PORT=4000 (default: 4000), WHITELIST_URLS=your_url(default: http://localhost), GRAPHIQL=true(default: false)');
+console.log('Create a .env file with ENV=development(defauld: production), PORT=4000 (default: 4000), WHITELIST_URLS=your_url(default: http://localhost)');
 console.log(`Then you can run: npm start:dev`);
 
 const deleteFolders = isWin ? runCommand(deleteFoldersCommandWindows) : runCommand(deleteFoldersCommand);
