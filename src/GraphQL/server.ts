@@ -1,8 +1,8 @@
 'use strict';
 
 import express from 'express'; //express
-import { graphqlHTTP } from 'express-graphql';
-import { config } from '@config';
+// import { graphqlHTTP } from 'express-graphql';
+import { createHandler } from 'graphql-http/lib/use/express';
 import schema from '@src/GraphQL/schema';
 
 
@@ -10,13 +10,10 @@ const server = express.Router();//Router de Express
 
 server.use(
 	'/',
-	graphqlHTTP( (req, res) => {
-		return {
-			schema,
-			graphiql: config.GRAPHIQL,
-			context: { req, res }
-		};
-	}),
+	createHandler({
+		schema,
+		context: (req, res) => ({ req, res })
+	})
 );
 
 // DO NOT DO app.listen() unless we're testing this directly
