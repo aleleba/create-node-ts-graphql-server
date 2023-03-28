@@ -1,7 +1,6 @@
 'use strict';
 
 import express from 'express'; //express
-// import { graphqlHTTP } from 'express-graphql';
 import { createHandler } from 'graphql-http/lib/use/express';
 import schema from '@src/GraphQL/schema';
 
@@ -12,7 +11,10 @@ server.use(
 	'/',
 	createHandler({
 		schema,
-		context: (req, res) => ({ req, res })
+		context(req) {
+			const res = req.context.res
+			return {req, res};
+		},
 	})
 );
 
