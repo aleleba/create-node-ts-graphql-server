@@ -4,10 +4,10 @@ This project aims to have a starter kit for creating a new Node with typescript,
 
 Tech(Library or Framework) | Version |
 --- | --- |
-Jest (Testing) | 29.6.4
+Jest (Testing) | 29.7.0
 Typescript | 5.2.2
-GraphQL | 16.8.0
-Type GraphQL | 2.0.0-beta.2
+GraphQL | 16.8.1
+Type GraphQL | 2.0.0-beta.3
 
 ## Setup
 To create a new project run in the terminal:
