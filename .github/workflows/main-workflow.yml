@@ -1,0 +1,60 @@
+# This file contains the main workflow for the GitHub Actions CI/CD pipeline for a Node.js TypeScript GraphQL server project.
+# Name of the workflow
+name: Main Workflow
+
+# Define the event that triggers the workflow
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: ['*']
+
+# Define the jobs that will run in the workflow
+jobs:
+  # Job to run tests
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        cache: 'npm'
+        registry-url: https://registry.npmjs.org/
+    - run: npm ci --legacy-peer-deps
+    - run: npm test
+
+  # Job to build the package
+  test-build-package:
+    if: github.ref != 'refs/heads/master'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build
+
+  # Job to publish the package to npm
+  publish-npm:
+    if: github.ref == 'refs/heads/master'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci --legacy-peer-deps
+      - run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
