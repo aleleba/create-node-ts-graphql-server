@@ -3,7 +3,7 @@ import supertest from 'supertest';
 describe('global server tests', () => {
 	let request: supertest.SuperTest<supertest.Test>;
 	beforeEach( async () => {
-		request = await supertest(server);
+		request = await supertest(server) as unknown as supertest.SuperTest<supertest.Test>;
 	});
 
 	it('should return Test data from test Query', async () => {
