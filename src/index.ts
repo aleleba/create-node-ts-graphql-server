@@ -1,6 +1,6 @@
 'use strict';
 
-import "reflect-metadata";
+import 'reflect-metadata';
 import ws from 'ws'; // yarn add ws
 import express from 'express'; //express
 import cors from 'cors';
@@ -35,15 +35,15 @@ app
 	.use(apiRouter)//Routes de App
 	.use('/graphql', GraphQLserver);//Server of Graphql
 
-	if(config.PLAYGROUND_GRAPHQL === true){
-		app.get('/playground', expressPlayground({ 
-			endpoint: '/graphql',
-			subscriptionEndpoint: '/graphql',
-			settings: {
-				'request.credentials': 'include', //Include Credentials for playground
-		  	}, 
-		}));
-	}
+if(config.PLAYGROUND_GRAPHQL === true){
+	app.get('/playground', expressPlayground({ 
+		endpoint: '/graphql',
+		subscriptionEndpoint: '/graphql',
+		settings: {
+			'request.credentials': 'include', //Include Credentials for playground
+		}, 
+	}));
+}
 
 // DO NOT DO app.listen() unless we're testing this directly
 if (require.main === module) {
