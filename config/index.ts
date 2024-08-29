@@ -6,7 +6,7 @@ export const deFaultValues = {
 	ENV: 'production',
 	PLAYGROUND_GRAPHQL: 'false',
 	WHITELIST_URLS: 'http://localhost',
-	PORT: 4000,
+	PORT: '4000',
 };
 
 export const config = {
