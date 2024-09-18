@@ -44,6 +44,7 @@
     "graphql": "^16.9.0",
     "graphql-http": "^1.22.1",
     "graphql-playground-middleware-express": "^1.7.23",
+    "graphql-scalars": "^1.23.0",
     "graphql-subscriptions": "^2.0.0",
     "graphql-tools": "^9.0.1",
     "graphql-ws": "^5.16.0",
