@@ -26,7 +26,7 @@ jobs:
         node-version: 16
         cache: 'npm'
         registry-url: https://registry.npmjs.org/
-    - run: npm ci
+    - run: npm ci --legacy-peer-deps
     - run: npm test
 
   # Job to build the package
@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci 
+      - run: npm ci --legacy-peer-deps 
       - run: npm run build
 
   # Job to publish the package to npm
@@ -54,7 +54,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npm publish --access=public
         env:
           NPM_PERSONAL_TOKEN: ${{secrets.npm_token}}

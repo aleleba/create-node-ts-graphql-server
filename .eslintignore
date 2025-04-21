@@ -1,7 +1,0 @@
-#Eslint
-.eslintrc.js
-#Build
-build
-#Webpack
-webpack.config.ts
-webpack.config.dev.ts

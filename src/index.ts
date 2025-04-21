@@ -5,7 +5,7 @@ import ws from 'ws'; // yarn add ws
 import express from 'express'; //express
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import { useServer } from 'graphql-ws/lib/use/ws';
+import { useServer } from 'graphql-ws/use/ws';
 import { execute, subscribe } from 'graphql';
 import GraphQLserver from '@GraphQL/server';// Server of GraphQL,
 import expressPlayground from 'graphql-playground-middleware-express';
