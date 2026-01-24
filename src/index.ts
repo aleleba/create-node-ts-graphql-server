@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 import { useServer } from 'graphql-ws/use/ws';
 import { execute, subscribe } from 'graphql';
 import GraphQLserver from '@GraphQL/server';// Server of GraphQL,
-import expressPlayground from 'graphql-playground-middleware-express';
+import { ruruHTML } from 'ruru/server';
 import schema from '@GraphQL/schema';
 import { config } from '@config';
 import apiRouter from '@routes';
@@ -36,13 +36,12 @@ app
 	.use('/graphql', GraphQLserver);//Server of Graphql
 
 if(config.PLAYGROUND_GRAPHQL === true){
-	app.get('/playground', expressPlayground({ 
-		endpoint: '/graphql',
-		subscriptionEndpoint: '/graphql',
-		settings: {
-			'request.credentials': 'include', //Include Credentials for playground
-		}, 
-	}));
+	app.get('/playground', (_req, res) => {
+		res.type('html');
+		res.end(ruruHTML({ 
+			endpoint: '/graphql',
+		}));
+	});
 }
 
 // DO NOT DO app.listen() unless we're testing this directly

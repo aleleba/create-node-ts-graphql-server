@@ -1,6 +1,6 @@
 {
   "name": "@aleleba/create-node-ts-graphql-server",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Node with Typescript and GraphQL Server",
   "bin": "./bin/cli.js",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "lint:fix": "eslint ./ --ext .js --ext .ts --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "check-updates": "npx npm-check-updates -u && npm i --legacy-peer-deps"
+    "check-updates": "npx npm-check-updates -u && npm i"
   },
   "repository": {
     "type": "git",
@@ -43,8 +43,8 @@
     "express": "^5.2.1",
     "graphql": "^16.12.0",
     "graphql-http": "^1.22.4",
-    "graphql-playground-middleware-express": "^1.7.23",
     "graphql-scalars": "^1.25.0",
+    "ruru": "^2.0.0-rc.4",
     "graphql-subscriptions": "^3.0.0",
     "graphql-tools": "^9.0.26",
     "graphql-ws": "^6.0.6",
