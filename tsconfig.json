@@ -4,7 +4,7 @@
       "esModuleInterop": true,
       "target": "es2021",
       "moduleResolution": "node10",
-      "ignoreDeprecations": "5.0",
+      "ignoreDeprecations": "6.0",
       "sourceMap": true,
       "typeRoots" : ["./src/@types", "./node_modules/@types"],
       "types": ["jest", "node"],
